@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum=1.0,minimum=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="图标字体/css/font-awesome.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            display: inline-block;
+        }
+        #main{
+            height: 600px;
+            width: 1900px;
+            border-bottom: 1px solid #000;
+            background: rgba(225,0,0,0.1);
+            border-top: 1px solid #666666;
+        }
+        #box_tp img{
+            width: 300px;
+            /*margin: 50px 0 0 100px;*/
+        }
+        #box_tp{
+            display: inline-block;
+            width: 300px;
+            margin: 50px 0 0 100px;
+        }
+        #main_r{
+            display: inline-block;
+            vertical-align: top;
+            margin: 50px 0 0 50px;
+            width: 1200px;
+            /*border: 1px solid #0071c6;*/
+        }
+        #main_r img{
+            float: right;
+            margin-right: 200px;
+            margin-top: 30px;
+
+        }
+        .bt{
+            font-size: 40px;
+            color: black;
+        }
+        #main_r p{
+            color: #999999;
+            margin-bottom: 10px;
+        }
+        #main_r span{
+            color: black;
+        }
+        #main_r button{
+            background: none;
+            border: 1px solid #CCCCCC;
+            margin-left: 10px;
+            width: 50px;
+            height: 25px;
+            color: #FF920B;
+        }
+        #main_r button:hover{
+            border-color: #FF920B;
+        }
+        .mx_tp li{
+            list-style: none;
+            width: 80px;
+            height: 80px;
+            background: #0071c6;
+            float: left;
+            margin-left: 50px;
+            border-radius: 50%;
+            background-image: url("img/mmexport1581519978341.jpg");
+            background-size: 65px;
+
+            margin-bottom: 50px;
+        }
+        .mx_tp li span{
+            position: relative;
+            top: 90px;
+            left: 20px;
+        }
+        #dy_box{
+            position: absolute;
+            width: 413px;
+            height: 174px;
+            background-image: url("img/dir_u2346.png");
+            background-size: cover;
+
+            display: none;
+            z-index: 100;
+        }
+        #dy_box div{
+            width: 80px;
+            height: 90px;
+            border-radius: 50%;
+            background-image: url("img/mmexport1581519978341.jpg");
+            background-size: cover;
+
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        #dy_box span{
+            background: white;
+            font-size: 40px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 13px;
+            margin-left: 10px;
+        }
+        #dy_box span:nth-of-type(2){
+            font-size: 20px;
+            margin-top: 30px;
+            color: red;
+        }
+        .lj_play{
+            background: #FF6427;
+            height: 60px;
+            width: 200px;
+            border-radius: 30px;
+            margin-left: 50px;
+            cursor: pointer;
+        }
+        .lj_play:hover{
+            background: #FF840C;
+        }
+        .fa-download{
+            margin-left: 50px;
+            color: red;
+        }
+         .fa-play-circle-o{
+            font-size: 30px;
+            margin: 15px 0 0 25px;
+            color: white;
+        }
+
+        #main_jj{
+            /*border: 1px solid #0071c6;*/
+            /*height: 300px;*/
+            width: 1300px;
+            padding-left: 100px;
+            /*float: left;*/
+            margin-top: 20px;
+            /*background: rgba(0, 0, 225, 0.1);*/
+
+
+        }
+        #main_jj li{
+            list-style: none;
+            float: left;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: #CCCCCC;
+            margin-right: 20px;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #main_jj li:hover{
+            background: #00f;
+            font-size: 25px;
+            color: #FF6427 ;
+            cursor: pointer;
+        }
+        #main_jj ul:last-child li:last-child{
+            width: 120px;
+            border-radius: 50px 50px 50px 50px;
+        }
+        /*#main_jj ul:nth-of-type(2){*/
+            /*display: none;*/
+        /*}*/
+        li{
+            list-style: none;
+        }
+        #dsjbd li{
+            width: 300px;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        #dsjbd li:hover{
+            color:  #FF6427;
+            font-size: 20px;
+        }
+        #dsjbd{
+            position: absolute;
+            margin-top: 50px;
+            vertical-align: top;
+            top: 700px;
+            left: 1420px;
+
+
+        }
+        #dsjbd li:nth-child(odd){
+            background: #F5F5F5;
+        }
+        #dsjbd li span:first-child{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background: #ccc;
+            /*margin-top: 10px;*/
+            line-height: 30px;
+            border-radius: 5px;
+            margin: 10px 10px 0 10px;
+        }
+        #dsjbd li:first-child span:first-child{
+            background: red;
+        }
+        #dsjbd li:nth-child(2) span:first-child{
+            background:#FF920B;
+        }
+        #dsjbd li:nth-child(3) span:first-child{
+            background:#FFC600;
+        }
+        #dsjbd li span:last-child{
+            float: right;
+            margin-right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .↑{
+            color:green;
+        }
+        ._{
+        color:red;
+        }
+        .↓{
+            color: #CCCCCC;
+        }
+        #yghx{
+            width: 1300px;
+
+            /*border: 1px solid #9A0000;*/
+            padding-left: 100px;
+            margin-top: 50px;
+
+        }
+        .qb_font li{
+            float: left;
+            width: 150px;
+            font-size: 30px;
+            display: inline-block;
+            text-align: center;
+            line-height: 70px;
+            cursor: pointer;
+
+        }
+        .lis_color{
+            border-bottom: 5px solid #FF6427;
+            color: #FF6427;
+        }
+        .qb_font{
+            width: 1300px;
+            border-bottom: 5px solid #ccc;
+            height: 70px;
+        }
+        .qb h1{
+            line-height: 80px;
+        }
+
+
+        .txl1 p:last-child{
+            color: #CCCCCC;
+        }
+        .txl1{
+            vertical-align: top;
+            margin-right: 50px;
+        }
+        .xsp1 video{
+            width: 200px;
+        }
+        #mainBox p span:hover{
+            color: #FF6428;
+        }
+        .qb img:hover{
+            /*filter:brightness(1.5);*/
+        }
+        .sc{
+            font-size: 40px;
+            position: absolute;
+            top: 490px;
+            left: 350px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #FF6428;
+            border-radius: 50%;
+            z-index:-1;
+            /*display: none;*/
+        }
+        .sc:hover{
+            background:#FF6428 ;
+            color: #ffffff;
+        }
+        #fh_top{
+            width: 50px;
+            height: 50px;
+            background:rgba(225,225,0,0.3);
+            position: fixed;
+            bottom: 100px;
+            right: 50px;
+            border-radius: 50%;
+            color: #0000ff;
+        }
+        #fh_top:hover{
+            background: #0000ff;
+            color: #ffffff;
+        }
+        #fh_top p{
+            font-size: 12px;
+        }
+        #fh_top span{
+            margin-left: 20px;
+        }
+
+
+
+
+
+        /*_______________________以下是头部____________*/
+
+        #header{
+            height: 70px;
+            /*background: #CCCCCC;*/
+            width: 1900px;
+            /*position: fixed;*/
+        }
+        .logo{
+            margin: 10px 0 0 100px;
+
+            line-height: 70px;
+        }
+        .sy_pd  {
+            position: relative;
+            bottom: 8px;
+            margin-left: 20px;
+        }
+
+
+        .sy_pd span{
+            margin-left: 10px;
+            color: #666666;
+        }
+        .sy_pd span:hover{
+            color:black;
+            cursor: pointer;
+        }
+
+        .ss{
+            margin-left: 150px;
+            position: relative;
+            bottom: 10px;
+            /*border: 1px solid #0000ff;*/
+        }
+        .ss button:hover{
+            background: #FD850E;
+        }
+        .ss input{
+            width: 400px;
+            height: 30px;
+            border: 2px solid #FF6529;
+            border-left: none;
+            outline: none;
+        }
+        .ss span{
+            border: 2px solid #FF6529;
+            border-right: none;
+            width: 40px;
+            height:30px;
+            line-height: 28px;
+            text-align: center;
+            border-radius: 15px 0 0 15px;
+        }
+        .fa-search{
+            color:#FF6529 ;
+        }
+        .ss button{
+            border: none;
+            width: 80px;
+            height:34px;
+            line-height: 30px;
+            text-align: center;
+            border-radius:  0 15px 15px 0;
+            background: #FF6529;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+        .ss_r li{
+            float: right;
+            margin-top:17px;
+        }
+        .ss_r {
+            float: right;
+        }
+        .ss_r li{
+            text-align: center;
+            color: #666;
+            /*font-size: 12px;*/
+            margin-right: 10px;
+        }
+        .ss_r ul li:first-child{
+            font-size: 30px;
+
+        }
+        .ss_r ul li:hover{
+            color:red;
+            cursor:pointer;
+        }
+        .xia_la{
+            width: 200px;
+            height: 300px;
+            background: rgba(255,225,0,0.9);
+            position: absolute;
+            top: 44px;
+            left: 70px;
+            border: 2px solid #FF6529;
+            display: none;
+
+        }
+        .xia_la ul{
+            float: left;
+            margin-left: 10px;
+        }
+        .xia_la li{
+            line-height: 30px;
+        }
+        .xia_la li:hover{
+            color:  #FF6529;
+            cursor: pointer;
+        }
+        .xia_la span{
+            position: absolute;
+            top: -24px;
+            font-size: 35px;
+            color: #FF6529;
+        }
+        .xia_la span:hover{
+            color: #FF6529;
+        }
+
+
+        /*_______________________以下是底部___________*/
+        #footer{
+            height: 300px;
+            background:#DDDDDD;
+            width: 100%;
+            margin-top: 100px;
+        }
+        #fh_top{
+            animation: move 5s ease-in  infinite alternate forwards;
+        }
+        @keyframes move {
+            0%{
+                transform: translate(0px,0px);
+
+            }
+            20%{
+                transform: translate(0px,60px);
+
+                background: yellow;
+            }
+            40%{
+                transform: translate(40px,60px);
+                background: #f00;
+            }
+            60%{
+                transform: translate(40px,0px);
+                background: #0f0;
+
+            }
+            80%{
+                transform: translate(20px,20px);
+                background: #A3C3F6;
+            }
+            100%{
+                transform: translate(0px,0px);
+                background: #000;
+            }
+        }
+        body{
+            background: rgba(0,225,0,0.05);
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <!--导演简介-->
+    <div id="dy_box">
+        <div></div>
+        <span>Mr.an</span>
+        <span>(技术大咖)</span>
+    </div>
+    <!--头部搜索部分-->
+    <div id="header">
+        <div class="logo"><img src="img/logo-黑.png" alt=""/></div>
+        <div class="sy_pd"><span class="fa fa-home"> 首页 </span>
+            <span class="fa fa-th-large"> 频道
+              <div class="xia_la">
+                <span class="fa fa-angle-up"></span>
+                <ul>
+                    <li>电视剧</li>
+                    <li>VIP影院</li>
+                    <li>娱乐</li>
+                    <li>美剧</li>
+                    <li>微电影</li>
+                    <li>NBA</li>
+                    <li>原创</li>
+                    <li>拍客</li>
+                    <li>财经</li>
+                    <li>旅游</li>
+                </ul>
+                <ul>
+                    <li>综艺</li>
+                    <li>动漫</li>
+                    <li>音乐</li>
+                    <li>韩剧</li>
+                    <li>新闻</li>
+                    <li>搞笑</li>
+                    <li>时尚</li>
+                    <li>汽车</li>
+                    <li>房产</li>
+                    <li>精品课</li>
+                </ul>
+                <ul>
+                    <li>电影</li>
+                    <li>少儿</li>
+                    <li>纪录片</li>
+                    <li>体育</li>
+                    <li>游戏</li>
+                    <li>生活</li>
+                    <li>科技</li>
+                    <li>汽车</li>
+                    <li>直播</li>
+                    <li>热播剧</li>
+                </ul>
+
+              </div>
+            </span>
+
+        </div>
+        <div class="ss">
+            <span class="fa fa-search"></span><input type="text" placeholder="浪花一朵朵"/><button>全网搜</button>
+        </div>
+        <div class="ss_r">
+            <ul>
+                <li class="fa fa-user"></li>
+                <li><span class="fa fa-desktop"><br/>客户端</span></li>
+                <li><span class="fa fa-arrow-circle-up"><br/>上传</span></li>
+                <li><span class="fa fa-clock-o"><br/>看过</span></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--详情部分_____上-->
+    <div id="mainBox">
+    <div id="main">
+        <div id="box_tp"><img src="img/u2318.png" alt=""/><div class="fa fa-star-o sc" id="fa_star"></div></div>
+
+        <div id="main_r">
+            <img src="img/评分_03.png" alt=""/>
+            <p><span class="bt">楚乔传</span> Princess & Agents · 电视剧 </p>
+            <p>别 名: <span>特工皇妃楚乔传 11处特工...</span>地 区: <span>内地</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&thinsp;语 言: <span>普通话</span></p>
+            <p>总集数: <span>67</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  出品时间: <span>2017</span></p>
+            <p>更新时间: <span>接档剧 《浪花一朵朵》正在热播</span></p>
+            <p>标 签: <button>古装</button><button>爱情</button><button>剧情</button></p>
+            <p>简 介: <span>《楚乔传》原名《11处特工皇妃》,根据 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet aperiam, asperiores aspernatur cum doloremque eaque earum exercitationem fuga ipsa ipsam ipsum mollitia nemo nesciunt nihil omnis optio perferendis voluptatum! Accusantium cum cumque cupiditate ea facere minima molestiae nemo porro possimus quam, quasi quos repellendus reprehenderit rerum similique, sit suscipit tempora ullam velit vero. Quod repudiandae, veniam! Enim ex incidunt ipsam quidem ratione reprehenderit! Autem consectetur dolor ducimus fugit, illo in iusto laudantium minus mollitia neque nisi officia omnis perspiciatis, quas reiciendis, repellendus repudiandae tempora velit veniam voluptatibus. Dignissimos esse harum odio quis tempore! Aspernatur atque dolorum nemo quos rerum 冻结.</span></p>
+            <div class="mx_tp">
+                <ul>
+                    <li class="yy"><span>导演</span></li>
+                    <li class="yy"><span>演员1</span></li>
+                    <li class="yy"><span>演员2</span></li>
+                    <li class="yy"><span>演员3</span></li>
+                    <li class="yy"><span>演员4</span></li>
+                    <li class="yy"><span>演员5</span></li>
+                    <li class="yy"><span>演员6</span></li>
+                </ul>
+            </div>
+            <br/>
+            <div class="lj_play">
+                <h4 class="fa fa-play-circle-o"> 立即播放</h4>
+            </div>
+            <div class="fa fa-download">下载客户端,免费蓝光播放</div>
+        </div>
+    </div>
+<!--___________剧集部分___________-->
+    <div id="main_jj">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+            <li>32</li>
+            <li>33</li>
+            <li>34</li>
+            <li>35</li>
+            <li>36</li>
+            <li>37</li>
+            <li>38</li>
+            <li>39</li>
+            <li>40</li>
+            <li>41</li>
+            <li class="xian_shi">...</li>
+        </ul>
+            <ul class="hide">
+                <li>42</li>
+                <li>43</li>
+                <li>44</li>
+                <li>45</li>
+                <li>46</li>
+                <li>47</li>
+                <li>48</li>
+                <li>49</li>
+                <li>50</li>
+                <li>51</li>
+                <li>52</li>
+                <li>53</li>
+                <li>54</li>
+                <li>55</li>
+                <li>56</li>
+                <li>57</li>
+                <li>58</li>
+                <li>59</li>
+                <li>60</li>
+                <li>61</li>
+                <li>62</li>
+                <li>63</li>
+                <li>64</li>
+                <li>65</li>
+                <li>66</li>
+                <li>67</li>
+                <li>68</li>
+                <li>69</li>
+                <li>70</li>
+                <li>71</li>
+                <li>72</li>
+                <li>73</li>
+                <li>74</li>
+                <li>75</li>
+            </ul>
+        <ul>
+            <li>76</li>
+            <li>77</li>
+            <li>78</li>
+            <li>79</li>
+            <li>80</li>
+            <li>全部</li>
+        </ul>
+
+    </div>
+
+    <!--__________电视剧榜单____________________-->
+    <div id="dsjbd">
+        <h1>电视剧榜单</h1>
+        <ul>
+            <li><span>1</span>浪花一朵朵<span class="_">-</span></li>
+            <li><span>2</span>无心法师2<span class="_">-</span></li>
+            <li><span>3</span>我们的爱<span class="↑">↑</span></li>
+            <li><span>4</span>双世宠妃<span class="↓">↓</span></li>
+            <li><span>5</span>鬼吹灯之黄皮子坟<span class="_">-</span></li>
+            <li><span>6</span>丽姬传<span class="_">-</span></li>
+            <li><span>7</span>青春最好时<span class="↑">↑</span></li>
+            <li><span>8</span>人间至味是清欢<span class="↓">↓</span></li>
+            <li><span>9</span>我的前半生<span class="_">-</span></li>
+            <li><span>10</span>盲约<span class="↑">↑</span></li>
+        </ul>
+    </div>
+    <!--_______________全部 同系列 预告花絮_____________-->
+    <div id="yghx">
+        <div class="qb_font">
+           <ul>
+               <li class="lis_color">全部</li>
+               <li>同系列</li>
+               <li>预告和花絮</li>
+               <li>小视频</li>
+           </ul>
+        </div>
+        <div class="qb">
+            <div class="txl">
+                <h1>同系列</h1>
+                <div class="txl1">
+                    <img src="img/dir_u2346_03.png" alt=""/>
+                    <p><span>楚乔传[DVD版]</span></p>
+                    <p>普通话/DVD/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/G%7DUZTPPF%7B5QOO42%7DV%258N2%7DF.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/电视剧详情页-恢复的_03.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+            </div>
+            <div class="yg_hx">
+                <h1>预告和花絮</h1>
+                <div class="txl1">
+                    <img src="img/预告花絮_03.png" alt=""/>
+                    <p><span>楚乔传[DVD版]</span></p>
+                    <p>普通话/DVD/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/11111_03.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/22_03.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/33_03.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+                <div class="txl1">
+                    <img src="img/44.png" alt=""/>
+                    <p><span>楚乔传[TV剪辑版]</span></p>
+                    <p>普通话/TV剪辑版/2017</p>
+                </div>
+            </div>
+            <div class="xsp">
+                <h1>小视频</h1>
+                <div class="xsp1">
+                    <video src="img/WeChat_20191027212832.mp4" controls></video>
+                    <p><span>鳄龟钓鱼</span></p>
+                    <p>哈哈哈哈哈哈哈哈!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <a href="#header"><div id="fh_top"><span>↑</span><p>返回顶部</p></div></a>
+    <div id="footer">
+        <img src="img/底部_02.png" alt=""/>
+    </div>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+    var dy=document.getElementById("dy_box");
+    $(function(){
+
+        $(".hide").hide();
+        $(".yy").mousemove(function(e){
+            var mouseX= e.pageX; //获取鼠标当前x坐标
+            var mouseY= e.pageY; //获取鼠标当前y坐标
+             dy.style.top=mouseY+20+"px"; //图片位置在鼠标坐标 y+20px
+             dy.style.left=mouseX-40+"px"; //图片位置在鼠标坐标 x-40px
+            $("#dy_box").stop().slideDown(300);
+            $(".yy").mouseout(function(){
+                $("#dy_box").stop().slideUp(200);
+            })
+        });
+
+        $(".lj_play").click(function(){
+            var video=$("video")[0];
+            video.webkitRequestFullScreen();
+            video.play();
+        });
+        var lis= $(".qb_font").children().children();
+        $(".qb_font:eq(0)").children().children().click(function(){
+            $(".qb_font").children().children().removeClass("lis_color");
+            $(this).addClass("lis_color");
+        });
+
+        lis[0].onclick=function() {
+            $(".yg_hx").show();
+            $(".xsp").show();
+            $(".txl").show();
+        };
+        lis[1].onclick=function() {
+            $(".yg_hx").hide();
+            $(".xsp").hide();
+            $(".txl").show();
+        };
+        lis[2].onclick=function() {
+            $(".xsp").hide();
+            $(".txl").hide();
+            $(".yg_hx").show();
+        };
+        lis[3].onclick=function() {
+            $(".txl").hide();
+            $(".yg_hx").hide();
+            $(".xsp").show();
+        };
+        $(".xian_shi").click(function(){
+            $(".hide").show();
+            $(this).hide();
+        });
+        $("#main_jj").children("ul").eq(2).click(function(){
+            $(".hide").show();
+            $(".xian_shi").hide();
+        });
+        $(".qb img").mouseover(function(){
+            $(this).css("filter","brightness(1.5)");
+            $(this).next().css({
+                color:"#FF6428"
+            });
+
+        });
+        $(".qb img").mouseout(function(){
+            $(this).css("filter","brightness(1.0)");
+            $(this).next().css({
+                color:"#000"
+            });
+        });
+
+        $("#box_tp").mouseover(function(){
+            $(".sc").css("z-index","100");
+
+        });
+
+        $("#box_tp").mouseout(function(){
+            $(".sc").css("z-index","-2");
+        });
+        $("#fa_star").click(function(){
+            $(this).toggleClass("fa-star-o");
+            $(this).toggleClass("fa-star");
+//            if( $(this).hasClass("fa-star")) {
+//
+//            }
+        });
+
+        $(".fa-th-large").mouseover(function(){
+                var a=1;
+                console.log(a);
+                    $(".xia_la").stop().slideDown();
+            });
+        $(".fa-th-large").mouseout(function(){
+            $(".xia_la").stop().slideUp();
+
+        });
+
+
+    })
+
+
+
+
+</script>
+</body>
+</html>
